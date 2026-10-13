@@ -1,0 +1,9 @@
+/* Tailwind-first UI: keep overrides minimal to avoid fighting Tailwind classes. */
+#app {
+  min-height: 100vh;
+}
+
+canvas {
+  display: block;
+}
+

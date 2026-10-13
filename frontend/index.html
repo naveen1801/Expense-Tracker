@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium SaaS - Expense Tracker</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#595c5e",
+              "on-background": "#2c2f31",
+              "primary-fixed-dim": "#ff5865",
+              "outline": "#747779",
+              "on-secondary": "#f2f1ff",
+              "inverse-surface": "#0b0f10",
+              "error-dim": "#b92902",
+              "secondary": "#555a74",
+              "on-primary-fixed": "#000000",
+              "surface": "#f5f7f9",
+              "surface-container-high": "#dfe3e6",
+              "surface-container-low": "#eef2f7",
+              "on-primary-container": "#4e000d",
+              "on-error": "#ffefec",
+              "surface-dim": "#d0d5d8",
+              "on-tertiary-fixed": "#00212f",
+              "tertiary": "#006385",
+              "on-tertiary": "#e7f5ff",
+              "secondary-container": "#d1d5f5",
+              "on-tertiary-container": "#00394f",
+              "on-secondary-fixed-variant": "#4e536d",
+              "tertiary-container": "#48c2f9",
+              "surface-container-highest": "#d9dde0",
+              "outline-variant": "#abadaf",
+              "on-surface": "#2c2f31",
+              "surface-variant": "#d9dde0",
+              "on-secondary-container": "#454a63",
+              "on-error-container": "#520c00",
+              "surface-tint": "#b70e2f",
+              "surface-bright": "#f5f7f9",
+              "primary": "#b70e2f",
+              "background": "#f5f7f9",
+              "error": "#b02500",
+              "error-container": "#f95630",
+              "inverse-primary": "#ff5260",
+              "primary-fixed": "#ff757b",
+              "on-primary-fixed-variant": "#600013",
+              "secondary-fixed": "#d1d5f5",
+              "primary-container": "#ff757b",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#000000",
+              "outline-variant": "#abadaf",
+              "secondary-dim": "#494e68",
+              "on-tertiary-fixed-variant": "#00435b",
+              "tertiary-fixed-dim": "#34b4ea",
+              "on-tertiary-fixed-variant": "#00435b",
+              "text-tertiary": "#006385",
+              "primary-container": "#ff757b",
+              "on-primary": "#ffffff"
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px"
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Manrope"],
+              label: ["Manrope"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Manrope', sans-serif; }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface min-h-screen">
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
