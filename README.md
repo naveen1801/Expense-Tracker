@@ -1,4 +1,4 @@
-# Expense Tracker Project
+# Expense Tracker
 
 Full-stack expense tracking app with:
 - `Express` + `MySQL` backend API
@@ -15,7 +15,7 @@ Full-stack expense tracking app with:
 ## Project Structure
 
 ```text
-expense Project/
+Expense-Tracker/
 ├─ server.js                # API entry point
 ├─ setup-db.js              # Creates DB and tables from database.sql
 ├─ database.sql             # SQL schema
@@ -148,3 +148,8 @@ Frontend scripts:
 - If backend fails with missing env vars, verify `.env` is in project root.
 - If MySQL connection fails, verify `DB_HOST`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME`.
 - If frontend cannot call API, ensure backend is running on port `4000`.
+
+## Author
+
+**Naveen Agarwal**, B.E. Computer Science and Engineering, SSN College of Engineering
+[GitHub](https://github.com/naveen1801) · [LinkedIn](https://linkedin.com/in/naveen-agarwal-262b1b29a)
