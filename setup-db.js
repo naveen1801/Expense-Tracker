@@ -22,6 +22,11 @@ const sql = await fs.readFile(sqlPath, 'utf8');
 
 const conn = await mysql.createConnection({
   host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT) || 3306,
+  // Cloud MySQL (Aiven, TiDB Cloud, ...) needs TLS. Aiven also needs its CA certificate in DB_SSL_CA.
+  ...(process.env.DB_SSL === 'true'
+    ? { ssl: { minVersion: 'TLSv1.2', rejectUnauthorized: true, ...(process.env.DB_SSL_CA ? { ca: process.env.DB_SSL_CA.replace(/\\n/g, '\n') } : {}) } }
+    : {}),
   user: process.env.DB_USER,
   // Only pass password when non-empty.
   password: process.env.DB_PASSWORD || undefined,

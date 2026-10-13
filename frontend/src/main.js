@@ -3,7 +3,9 @@ import { createApi, toQueryString } from './utils/api.js';
 import { renderCategoriesPie, renderMonthlyTrendsLine } from './utils/charts.js';
 
 const app = document.querySelector('#app');
-const API_BASE = 'http://localhost:4000/api';
+// Dev: talk to the local API. Production: same origin (Express serves the built frontend).
+const API_BASE =
+  import.meta.env.VITE_API_URL ?? (import.meta.env.DEV ? 'http://localhost:4000/api' : '/api');
 
 const CATEGORIES = ['Food', 'Travel', 'Bills', 'Shopping', 'Other'];
 

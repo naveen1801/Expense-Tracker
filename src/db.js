@@ -1,12 +1,8 @@
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
-const dotenvResult = dotenv.config();
-if (dotenvResult?.error) {
-  throw new Error(
-    `Missing .env file in the project root. Expected at: ${process.cwd()}\\/.env`,
-  );
-}
+// Load .env when present (local dev). On a host like Render, variables come from the dashboard.
+dotenv.config();
 
 // Fail fast with a clear error when env vars are missing.
 // This avoids confusing MySQL "password: NO" errors caused by an absent `.env`.
@@ -26,6 +22,11 @@ if (missing.length) {
 
 const poolConfig = {
   host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT) || 3306,
+  // Cloud MySQL (Aiven, TiDB Cloud, ...) needs TLS. Aiven also needs its CA certificate in DB_SSL_CA.
+  ...(process.env.DB_SSL === 'true'
+    ? { ssl: { minVersion: 'TLSv1.2', rejectUnauthorized: true, ...(process.env.DB_SSL_CA ? { ca: process.env.DB_SSL_CA.replace(/\\n/g, '\n') } : {}) } }
+    : {}),
   user: process.env.DB_USER,
   database: process.env.DB_NAME,
   waitForConnections: true,
